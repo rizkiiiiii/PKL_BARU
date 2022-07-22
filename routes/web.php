@@ -23,11 +23,16 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-//Route siswa
-Route::resource('siswa', SiswaController::class);
-Route::resource('pembelian', PembelianController::class);
-
 //Test Template
 Route::get('test-template',function(){
     return view ('layouts.admin');
+});  
+
+//Route Backend
+Route::group(['prefix'=>'admin','middleware'=>['auth']],function(){
+    Route::get('/',function(){
+        return view('admin.index');
+    });
+    Route::resource('siswa',SiswaController::class);
+    Route::resource('pembelian',PembelianController::class);
 });

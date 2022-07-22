@@ -21,7 +21,7 @@ class SiswaController extends Controller
     {
         //menampilkan semua data dari model Siswa
         $siswa = Siswa::all();
-        return view('siswa.index', compact('siswa'));
+        return view('siswa.index', compact('siswa'), ['title'=>'siswa']);
     }
 
     /**
