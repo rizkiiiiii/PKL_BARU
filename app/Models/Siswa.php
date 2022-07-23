@@ -13,4 +13,12 @@ class Siswa extends Model
     // membuat fitur created_at(kapan data dibuat) & updated_at (kapan data diedit)
     // aktif
     public $timestamps = true;
+
+    public function Wali()
+    {
+        //Data Dari Model 'Siswa' bisa memiliki 1 data
+        // dari ,pdel 'Wali' melalui id_siswa
+
+        return $this->hasOne(Wali::class, 'id_siswa');
+    }
 }

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PembelianController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\WaliController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,15 +25,17 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //Test Template
-Route::get('test-template',function(){
-    return view ('layouts.admin');
-});  
+Route::get('test-template', function () {
+    return view('layouts.admin');
+});
 
 //Route Backend
-Route::group(['prefix'=>'admin','middleware'=>['auth']],function(){
-    Route::get('/',function(){
+Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
+    Route::get('/', function () {
         return view('admin.index');
     });
-    Route::resource('siswa',SiswaController::class);
-    Route::resource('pembelian',PembelianController::class);
+    Route::resource('siswa', SiswaController::class);
+    Route::resource('pembelian', PembelianController::class);
+    Route::resource('wali', WaliController::class);
+
 });
