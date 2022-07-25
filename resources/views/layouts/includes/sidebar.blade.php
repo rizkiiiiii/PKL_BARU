@@ -42,6 +42,9 @@
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+
+
+            
             {{-- <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{route('siswa.index')}}" class="nav-link active">
@@ -63,8 +66,10 @@
               </li>
             </ul>
           </li> --}}    
+
+          
           <li class="nav-item">
-            <a href="{{route('siswa.index')}}" class="nav-link {{ $title === 'siswa' ? 'activate':''}}">
+            <a href="{{route('siswa.index')}}" class="nav-link ">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 SISWA
@@ -73,7 +78,25 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{route('pembelian.index')}}" class="nav-link {{ $title === 'pembelian' ? 'activate' : '' }}">
+            <a href="{{route('pembelian.index')}}" class="nav-link ">
+              <i class="far fa-circle nav-icon"></i>
+              <p>
+                PENJUALAN
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('wali.index')}}" class="nav-link ">
+              <i class="nav-icon fas fa-copy " ></i>
+              <p>
+                WALI
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+          {{-- <li class="nav-item">
+            <a href="pembelian" class="nav-link">
               <i class="nav-icon fas fa-copy " ></i>
               <p>
                 pembelian
@@ -664,7 +687,7 @@
               <i class="nav-icon far fa-circle text-info"></i>
               <p>Informational</p>
             </a>
-          </li>
+          </li> --}}
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
